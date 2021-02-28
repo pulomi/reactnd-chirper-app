@@ -1,5 +1,5 @@
 
-export default logger = (store) => (next) => (action)=>{
+const logger = (store) => (next) => (action)=>{
 
     console.group(action.type)
     console.log("action:", action)
@@ -9,3 +9,5 @@ export default logger = (store) => (next) => (action)=>{
 
     return result
 }
+
+export default logger

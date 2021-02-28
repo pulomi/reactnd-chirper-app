@@ -4,10 +4,10 @@ import {getTweets} from './tweets.js'
 import {setAuthedUser} from './authedUser.js'
 
 const AUTHED_USER_ID  = 'dan_abramov'
-export function handleReceiveData(){
+export function handleInitialData(){
 
     return (dispatch) => {
-        getInitialData().then((users,tweets)=>{
+        return getInitialData().then((users,tweets)=>{ //todo-abs why do we need to return at this step , what are we returning ?
             dispatch(getUsers(users))
             dispatch(getTweets(tweets))
             dispatch(setAuthedUser(AUTHED_USER_ID))
