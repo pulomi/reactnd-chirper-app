@@ -7,7 +7,7 @@ const AUTHED_USER_ID  = 'dan_abramov'
 export function handleInitialData(){
 
     return (dispatch) => {
-        return getInitialData().then((users,tweets)=>{ //todo-abs why do we need to return at this step , what are we returning ?
+        return getInitialData().then(({users,tweets})=>{ //todo-abs why do we need to return at this step , what are we returning ?
             dispatch(getUsers(users))
             dispatch(getTweets(tweets))
             dispatch(setAuthedUser(AUTHED_USER_ID))
