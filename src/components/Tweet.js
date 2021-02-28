@@ -4,11 +4,17 @@ import {formatTweet, formatDate} from '../utils/helpers.js'
 import { TiArrowBackOutline } from 'react-icons/ti/index'
 import { TiHeartOutline } from 'react-icons/ti/index'
 import { TiHeartFullOutline } from 'react-icons/ti/index'
+import { handleToggleTweet } from '../actions/tweets.js'
 class Tweet extends React.Component{
 
     handleLike = (e) => {
         e.preventDefault()
-        //TODO : handle like
+        const { dispatch, tweet, authedUser } = this.props
+        dispatch(handleToggleTweet({
+            id: tweet.id,
+            hasLiked: tweet.hasLiked,
+            authedUser
+        }))
     }
 
     toParent = (e, id) => {
