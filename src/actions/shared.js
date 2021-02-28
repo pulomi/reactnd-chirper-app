@@ -3,7 +3,7 @@ import {getUsers} from './users.js'
 import {getTweets} from './tweets.js'
 import {setAuthedUser} from './authedUser.js'
 
-const AUTHED_USER_ID  = 'dan_abramov'
+const AUTHED_USER_ID  = 'tylermcginnis'
 export function handleInitialData(){
 
     return (dispatch) => {
